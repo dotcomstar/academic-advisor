@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import Layout from "./pages/Layout";
 import UserProfilePage from "./pages/UserProfilePage";
 import PrivateRoutes from "./pages/PrivateRoutes";
+import { LandingPage } from "./pages/LandingPage";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> }, // Default component
+      { path: "landing-page", element: <LandingPage /> },
       {
         element: <PrivateRoutes />,
         children: [
