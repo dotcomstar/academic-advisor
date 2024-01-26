@@ -5,7 +5,6 @@ import {
 } from "react-router-dom";
 import { Button, Grid } from "@mui/material";
 import NavBar from "../components/navbar/NavBar";
-import Layout from "./Layout";
 import ThemedLayout from "../components/ThemedLayout";
 
 const ErrorPage = () => {
