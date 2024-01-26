@@ -32,6 +32,7 @@ const HomePage = () => {
           sx={{
             py: 2,
             mx: 3,
+            pb: 5,
             width: customWidth,
           }}
         >
