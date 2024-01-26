@@ -5,6 +5,8 @@ import {
 } from "react-router-dom";
 import { Button, Grid } from "@mui/material";
 import NavBar from "../components/navbar/NavBar";
+import Layout from "./Layout";
+import ThemedLayout from "../components/ThemedLayout";
 
 const ErrorPage = () => {
   const navigate = useNavigate();
@@ -24,22 +26,24 @@ const ErrorPage = () => {
 
   return (
     <>
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <NavBar hasBottomBorder />
+      <ThemedLayout>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <NavBar hasBottomBorder />
+          </Grid>
+          <Grid item xs={12} marginLeft={2}>
+            <h1>Oops!</h1>
+            <p>{errorMessage}</p>
+            <Button
+              variant="outlined"
+              color="secondary"
+              onClick={() => navigate("/")}
+            >
+              Return home
+            </Button>
+          </Grid>
         </Grid>
-        <Grid item xs={12} marginLeft={2}>
-          <h1>Oops!</h1>
-          <p>{errorMessage}</p>
-          <Button
-            variant="outlined"
-            color="secondary"
-            onClick={() => navigate("/")}
-          >
-            Return home
-          </Button>
-        </Grid>
-      </Grid>
+      </ThemedLayout>
     </>
   );
 };
