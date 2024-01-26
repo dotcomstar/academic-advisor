@@ -1,18 +1,9 @@
-import {
-  Grid,
-  IconButton,
-  Paper,
-  Stack,
-  TextField,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
+import { Grid, useMediaQuery } from "@mui/material";
 import NavBar from "../components/navbar/NavBar";
+import ChatBox from "../components/chatbox/ChatBox";
 
 const HomePage = () => {
   const matches = useMediaQuery("(min-width:600px)");
-  const customWidth = "calc(100% - 48px)";
 
   return (
     <Grid container paddingY={matches ? 1 : 0}>
@@ -27,36 +18,7 @@ const HomePage = () => {
         justifyContent={"center"}
         sx={{ py: 4 }}
       >
-        <Paper
-          elevation={2}
-          sx={{
-            py: 2,
-            mx: 3,
-            pb: 5,
-            width: customWidth,
-          }}
-        >
-          <Stack
-            direction={"column"}
-            width={"100%"}
-            display={"flex"}
-            alignItems={"center"}
-            justifyContent={"center"}
-          >
-            <Typography fontSize="large" m={2}>
-              Put the chat thing here
-            </Typography>
-            <Stack direction={"row"} sx={{ px: 2 }} width={"100%"}>
-              <TextField
-                fullWidth
-                label="Ask about college admissions"
-              ></TextField>
-              <IconButton>
-                <SendIcon />
-              </IconButton>
-            </Stack>
-          </Stack>
-        </Paper>
+        <ChatBox />
       </Grid>
     </Grid>
   );
