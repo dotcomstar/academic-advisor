@@ -11,3 +11,5 @@ export const LOGIN_TITLE = "Login";
 export const LOGIN_ARIA = "login-button";
 export const LOGOUT_ARIA = "logout-button";
 export const PROFILE_ARIA = "profile-button";
+
+export const DARK_MODE_LABEL = "Dark Theme";
