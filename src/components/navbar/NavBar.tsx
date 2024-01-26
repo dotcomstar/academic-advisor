@@ -27,9 +27,9 @@ const NavBar = ({}: NavBarProps) => {
         px="calc(max(3vw,20px))"
       >
         {isAuthenticated ? (
-          <ProfileButton size="small" />
+          <ProfileButton size={matches ? "large" : "small"} />
         ) : (
-          <LoginButton size="small" />
+          <LoginButton size={matches ? "large" : "small"} />
         )}
 
         <Box onClick={() => navigate("/")}>
