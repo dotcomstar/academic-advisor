@@ -48,23 +48,24 @@ const NavBar = ({}: NavBarProps) => {
           alignItems="center"
           px="calc(max(3vw,20px))"
         >
-          {isAuthenticated ? (
-            <ProfileButton size={matches ? "large" : "small"} />
-          ) : (
-            <LoginButton size={matches ? "large" : "small"} />
-          )}
-
           <Box onClick={() => navigate("/")}>
             <Typography
               translate="no"
-              variant="h3"
+              variant="h5"
               fontSize={"1.5REM"}
               top={matches ? "15px" : "10px"}
             >
               {APP_TITLE}
             </Typography>
           </Box>
-          <SettingsButton size={matches ? "large" : "small"} />
+          <Stack direction={"row"}>
+            {isAuthenticated ? (
+              <ProfileButton size={matches ? "large" : "small"} />
+            ) : (
+              <LoginButton size={matches ? "large" : "small"} />
+            )}
+            <SettingsButton size={matches ? "large" : "small"} />
+          </Stack>
         </Stack>
       </Paper>
       <SettingsDialog
