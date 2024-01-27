@@ -6,43 +6,31 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  TextField,
+  Stack,
 } from "@mui/material";
 
 const SamplePrompts = () => {
   return (
     <Grid item xs={12}>
       <List>
-        <ListItemButton key="RemySharp">
-          <ListItemIcon>
-            <Avatar
-              alt="Remy Sharp"
-              src="https://material-ui.com/static/images/avatar/1.jpg"
-            />
-          </ListItemIcon>
-          <ListItemText primary="John Wick"></ListItemText>
+        <ListItemButton key="seewhatotherssay">
+          <ListItemText primary="See what others are asking"></ListItemText>
         </ListItemButton>
       </List>
       <Divider />
-      <Grid item xs={12} style={{ padding: "10px" }}>
-        <TextField
-          id="outlined-basic-email"
-          label="Search"
-          variant="outlined"
-          fullWidth
-        />
-      </Grid>
       <Divider />
       <List>
-        <ListItemButton key="RemySharp">
+        <ListItemButton key="Remy">
           <ListItemIcon>
             <Avatar
               alt="Remy Sharp"
               src="https://material-ui.com/static/images/avatar/1.jpg"
             />
           </ListItemIcon>
-          <ListItemText primary="Remy Sharp">Remy Sharp</ListItemText>
-          <ListItemText secondary="online"></ListItemText>
+          <Stack direction={"column"}>
+            <ListItemText primary="What are good extracurriculars?" />
+            <ListItemText secondary="- Remy, 16"></ListItemText>
+          </Stack>
         </ListItemButton>
         <ListItemButton key="Alice">
           <ListItemIcon>
@@ -51,16 +39,22 @@ const SamplePrompts = () => {
               src="https://material-ui.com/static/images/avatar/3.jpg"
             />
           </ListItemIcon>
-          <ListItemText primary="Alice">Alice</ListItemText>
+          <Stack direction={"column"}>
+            <ListItemText primary="How do I ask for a rec letter?" />
+            <ListItemText secondary="- Alice, 18"></ListItemText>
+          </Stack>
         </ListItemButton>
-        <ListItemButton key="CindyBaker">
+        <ListItemButton key="Cindy">
           <ListItemIcon>
             <Avatar
               alt="Cindy Baker"
               src="https://material-ui.com/static/images/avatar/2.jpg"
             />
           </ListItemIcon>
-          <ListItemText primary="Cindy Baker">Cindy Baker</ListItemText>
+          <Stack direction={"column"}>
+            <ListItemText primary="I have two competing offers but I need more money to go to my dream school. What should I do?" />
+            <ListItemText secondary="- Cindy, 18"></ListItemText>
+          </Stack>
         </ListItemButton>
       </List>
     </Grid>

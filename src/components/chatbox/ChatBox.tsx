@@ -1,17 +1,19 @@
+import SendIcon from "@mui/icons-material/Send";
 import {
-  Paper,
-  Stack,
-  TextField,
+  Divider,
   Fab,
   Grid,
-  Divider,
   List,
   ListItem,
   ListItemText,
+  Paper,
+  Stack,
+  TextField,
 } from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
+
 const ChatBox = () => {
   const customWidth = "calc(100% - 48px)";
+
   return (
     <Paper
       elevation={2}
@@ -22,8 +24,8 @@ const ChatBox = () => {
         width: customWidth,
       }}
     >
-      <Grid item xs={9}>
-        <List sx={{ width: "100%" }}>
+      <Grid item xs={12}>
+        <List sx={{ mx: 2 }}>
           {[
             ["Please tell me how to get into a good school", "09:30"],
             ["[idk some AI stuff here]", "09:31"],
@@ -34,6 +36,7 @@ const ChatBox = () => {
               sx={{
                 display: "flex",
                 justifyContent: (i + 1) % 2 === 0 ? "flex-start" : "flex-end",
+                color: (i + 1) % 2 === 0 ? "secondary.main" : undefined,
               }}
             >
               <Stack direction={"column"}>

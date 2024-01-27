@@ -1,7 +1,7 @@
-import { Grid, Paper, Typography, useMediaQuery } from "@mui/material";
-import NavBar from "../components/navbar/NavBar";
+import { Grid, useMediaQuery } from "@mui/material";
 import ChatBox from "../components/chatbox/ChatBox";
 import SamplePrompts from "../components/chatbox/SamplePrompts";
+import NavBar from "../components/navbar/NavBar";
 
 const HomePage = () => {
   const matches = useMediaQuery("(min-width:600px)");
