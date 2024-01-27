@@ -9,7 +9,7 @@ import {
   Paper,
   Stack,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import UserInputField from "./UserInputField";
 
@@ -25,7 +25,7 @@ const ChatBox = () => {
     ["Thanks so much, here is 1 billion dollars!", "9:32"],
     ["[idk some AI stuff here]", "09:33"],
   ]);
-  const { handleSubmit, control } = useForm<PromptFormValues>({
+  const { handleSubmit, control, reset } = useForm<PromptFormValues>({
     defaultValues: { prompt: "" },
   });
 
@@ -38,7 +38,15 @@ const ChatBox = () => {
       [data.prompt, "09:34"],
       ["[more AI stuff here]", "09:34"],
     ]);
+    reset();
   };
+  const scrollRef = useRef<null | HTMLLIElement>(null);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages]);
 
   return (
     <Paper
@@ -48,6 +56,9 @@ const ChatBox = () => {
         mx: 3,
         pb: 5,
         width: customWidth,
+        maxHeight: "80dvh",
+        overflow: "auto",
+        overflowAnchor: "auto",
       }}
     >
       <Grid item xs={12}>
@@ -67,6 +78,9 @@ const ChatBox = () => {
               </Stack>
             </ListItem>
           ))}
+          {/* this is the last item that scrolls into
+             view when the effect is run */}
+          <ListItem ref={scrollRef} />
         </List>
         <form onSubmit={handleSubmit(onSubmit)} className="form">
           <Grid container style={{ padding: "20px" }} spacing={2}>
