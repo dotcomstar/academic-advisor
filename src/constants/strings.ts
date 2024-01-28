@@ -1,5 +1,6 @@
 // App-related strings
-export const APP_TITLE = "AI-vy Leage Counselor";
+export const APP_TITLE = "Apply Genius";
+export const COMPANY_NAME = "Attain AI";
 export const LOGO_ALT = `${APP_TITLE} Logo`;
 export const APP_URL = "https://academic-advisor.vercel.app/";
 export const CONTACT_EMAIL = "jetrlee@gmail.com";
